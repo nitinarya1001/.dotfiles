@@ -49,5 +49,5 @@ exec feh --bg-scale "$HOME/Pictures/fogforest.png" &
 exec picom &
 exec clipmenud &
 exec brave &
-exec $HOME/.config/.suckless/scripts/startdwm
+exec $HOME/.config/suckless/scripts/startdwm
 # exec dwm 

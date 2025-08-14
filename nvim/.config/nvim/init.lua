@@ -4,11 +4,9 @@ local Plug = vim.fn['plug#']
 vim.call('plug#begin')
 
 Plug('sainnhe/everforest')
-Plug('vim-airline/vim-airline')
+Plug('nvim-lualine/lualine.nvim')
 Plug('ryanoasis/vim-devicons')
 Plug('windwp/nvim-autopairs')
-Plug('lukas-reineke/indent-blankline.nvim')
-Plug('lewis6991/gitsigns.nvim')
 Plug('tpope/vim-fugitive')
 Plug('numToStr/Comment.nvim')
 
@@ -33,30 +31,18 @@ require("set")
 require("map")
 
 ---------------------------------------------------------
---                    airline                          --
+--                    lualine                          --
 ---------------------------------------------------------
-vim.cmd [[ let g:airline_theme = 'everforest' ]]
+require("lualine").setup({
+  options = {
+    theme = "everforest",
+  }
+})
 
 ---------------------------------------------------------
 --                   autopairs                         --
 ---------------------------------------------------------
 require("nvim-autopairs").setup {}
-
----------------------------------------------------------
---                 indent-lines                        --
----------------------------------------------------------
-local highlight = {
-    "RainbowOrange",
-}
-local hooks = require "ibl.hooks"
-hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
-    vim.api.nvim_set_hl(0, "RainbowOrange", { fg = "#D19A66" })
-end)
-
-vim.g.rainbow_delimiters = { highlight = highlight }
-require("ibl").setup { scope = { highlight = highlight } }
-
-hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)
 
 ---------------------------------------------------------
 --                     git status                      --
@@ -71,6 +57,15 @@ require('Comment').setup()
 ---------------------------------------------------------
 --                     telescope                       --
 ---------------------------------------------------------
+-- local telescope = require('telescope')
+-- telescope.setup {
+--     pickers = {
+--         find_files = {
+--             hidden = true
+--         }
+--     }
+-- }
+
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
@@ -80,7 +75,7 @@ vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help ta
 ---------------------------------------------------------
 --                    Tree-sitter                      --
 ---------------------------------------------------------
-require 'nvim-treesitter.configs'.setup ({
+require 'nvim-treesitter.configs'.setup({
     -- A list of parser names, or "all" (the listed parsers MUST always be installed)
     ensure_installed = { "c", "lua", "javascript" },
 

@@ -9,21 +9,20 @@ export EDITOR="nvim"
 export VISUAL="nvim"
 
 source /usr/share/bash-completion/bash_completion
+
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 
 # Custom aliases
 # Basic stuff
-alias vim='nvim'
-alias camrec='ffplay -window_title Webcam /dev/video0' #webcam window
 alias mirrors='sudo reflector --country India --latest 20 --sort rate --save /etc/pacman.d/mirrorlist'
 alias rm-bash-tmp='rm -rf ~/.bash_history-*'
 
 #suckless software configuration 
-alias cfgdwm='cd && cd ~/.config/.suckless/dwm && vim config.def.h && sudo rm config.h && sudo make clean install && killall -15 dwm' #DWM configuration
-alias cfgst='cd && cd ~/.config/.suckless/st && vim config.def.h && sudo rm config.h && sudo make clean install' #ST configuration
-alias cfgslstatus='cd && cd ~/.config/.suckless/slstatus && vim config.def.h && sudo rm config.h && sudo make clean install && killall -15 slstatus && (slstatus & disown)' #SLSTATUS configuration
-alias cfgslock='cd && cd ~/.config/.suckless/slock && vim config.def.h && sudo rm config.h && sudo make clean install' #slock configuration
+alias cfgdwm='cd && cd ~/.config/suckless/dwm && vim config.def.h && sudo rm config.h && sudo make clean install && killall -15 dwm' #DWM configuration
+alias cfgst='cd && cd ~/.config/suckless/st && vim config.def.h && sudo rm config.h && sudo make clean install' #ST configuration
+alias cfgslstatus='cd && cd ~/.config/suckless/slstatus && vim config.def.h && sudo rm config.h && sudo make clean install && killall -15 slstatus && (slstatus & disown)' #SLSTATUS configuration
+alias cfgslock='cd && cd ~/.config/suckless/slock && vim config.def.h && sudo rm config.h && sudo make clean install' #slock configuration
 
 #flex command
 alias ff='fastfetch -l arch3 -s OS:host:kernel:Uptime:packages:shell:display:WM:theme:icons:font:cursor:terminal:terminalfont:CPU:GPU:memory:swap:locale:colors'
