@@ -3,11 +3,11 @@ Essentials only Arch Linux setup
 
 ## Screenshots
 
-[tiling_mode](.screenshots/tiling.png)
-[floating_mode](.screenshots/floating.png)
-[clean_screen](.screenshots/blankdesktop.png)
-[systemn_monitor](.screenshots/btop.png)
-[music_screen](.screenshots/music.png)
+![tiling_mode](.screenshots/tiling.png)
+![floating_mode](.screenshots/floating.png)
+![clean_screen](.screenshots/blankdesktop.png)
+![systemn_monitor](.screenshots/btop.png)
+![music_screen](.screenshots/music.png)
 
 -my wallpapers are from [this repo](https://github.com/Apeiros-46B/everforest-walls.git)
 
