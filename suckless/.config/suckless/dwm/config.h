@@ -29,8 +29,6 @@ static const Rule rules[] = {
 	/* class            instance    title       tags mask     isfloating   monitor */
 //	{ "Gimp"           ,NULL,      	NULL,       0,            1,           -1 },
 	{ "ffplay"         ,NULL,       NULL,       0,            1,           -1 },
-	{ "copyq"          ,NULL,       NULL,       0,            1,           -1 },
-	{ "Blueman-manager",NULL,       NULL,       0,            1,           -1 },
 	{ "pavucontrol"    ,NULL,       NULL,       0,            1,           -1 },
 	{ "transmission"   ,NULL,       NULL,       0,            1,           -1 },
 	{ "Volume"         ,NULL,       NULL,       0,            1,           -1 },
@@ -39,9 +37,8 @@ static const Rule rules[] = {
 	{ "vlc"            ,NULL,       NULL,       0,            1,           -1 },
 	{ "Brave-browser"  ,NULL,       NULL,       1 << 1,       0,           -1 },
 	{ "Google-chrome"  ,NULL,       NULL,       1 << 1,       0,           -1 },
-	{ "Code"           ,NULL,       NULL,       1,            0,           -1 },
-	{ "Music"          ,NULL,       NULL,       1 << 8,       0,           -1 },
 	{ "Thunar"         ,NULL,       NULL,       1 << 2,       0,           -1 },
+	{ "libreoffice-writer",NULL,    NULL,       1 << 3,       0,           -1 },
 	{ "Lxappearance"   ,NULL,       NULL,       0,            1,           -1 },
 	{ "feh"            ,NULL,       NULL,       0,            1,           -1 },
 	{ "Timeshift-gtk"  ,"timeshift-gtk","Timeshift-gtk",0    ,1,           -1 },
@@ -86,11 +83,9 @@ static const char *filemanagercmd[] = { "thunar", NULL};
 static const char *clipboardcmd[]   = { "clipmenu", "-i", "-fn", dmenufont, "-nb", col_bgdark , "-nf", col_fglight, "-sb", col_bglight, "-sf", col_fglight , NULL};
 static const char *rockercmd[]      = { "st", "-c", "Volume", "alsamixer", NULL};
 static const char *lockcmd[]        = { "slock", NULL};
-//static const char *vscodecmd[]      = { "code", NULL};
 static const char *btcmd[]          = { "st", "-c", "Bluetooth", "bluetoothctl", NULL};
 static const char *camcmd[]         = { "ffplay", "-window_title", "Webcam", "/dev/video0", NULL};
 static const char *powercmd[]       = { "st", "-c", "Power", "bash","/home/nitin-arya/.scripts/on_and_off.sh", NULL};
-static const char *musiccmd[]       = { "st", "-c", "Music", "mpv","--no-video", "https://www.youtube.com/watch?v=jfKfPfyJRdk", NULL};
 static const char *sscmd[]          = { "flameshot", "gui", NULL};
 static const char *upvol[]          = { "/usr/bin/amixer",  "set", "Master", "5%+",   NULL };
 static const char *downvol[]        = { "/usr/bin/amixer",  "set", "Master", "5%-",   NULL };
@@ -146,8 +141,6 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_s,      spawn,          {.v = btcmd } },
 	{ MODKEY,                       XK_c,      spawn,          {.v = camcmd } },
 	{ 0,                            XK_Print,  spawn,          {.v = sscmd } },
-	{ MODKEY|ShiftMask,             XK_m,      spawn,          {.v = musiccmd } },
-//	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = vscodecmd } },
 	{ MODKEY,                       XK_v,      spawn,          {.v = clipboardcmd } },
 	{ MODKEY,                       XK_l,      spawn,          {.v = lockcmd } },
 	{ Mod1Mask,                     XK_F4,     spawn,          {.v = powercmd } },
