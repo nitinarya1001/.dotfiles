@@ -12,7 +12,6 @@ return {
 			options = {
 				theme = "everforest",
 				icons_enabled = true,
-				component_separators = "|",
 			},
 		})
 	end,

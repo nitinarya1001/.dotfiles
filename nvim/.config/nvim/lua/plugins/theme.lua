@@ -1,8 +1,8 @@
 -- ================================================================================================
--- TITLE : melange-nvim
+-- TITLE : everforest 
 -- ABOUT : A subtle, warm colorscheme for Neovim inspired by Sublime Text's Melange theme.
 -- LINKS :
---   > github : https://github.com/savq/melange-nvim
+--   > github : https://github.com/sainnhe/everforest
 -- ================================================================================================
 
 return {
@@ -11,10 +11,9 @@ return {
 	priority = 1000,
 	config = function()
 		vim.cmd("colorscheme everforest")
-                vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-                vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
-                vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "none" })
-                vim.api.nvim_set_hl(0, 'CursorLineNr', { fg = 'orange' })
-
+    vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+    vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
+    vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "none" })
+    vim.api.nvim_set_hl(0, 'CursorLineNr', { fg = 'orange' })
 	end,
 }

@@ -9,6 +9,7 @@ M.on_attach = function(client, bufnr)
 	}
 
 	-- native neovim keymaps
+	keymap("n", "<leader>fm", "<cmd>lua vim.lsp.buf.format()<CR>", opts) -- format document
 	keymap("n", "<leader>gD", "<cmd>lua vim.lsp.buf.definition()<CR>", opts) -- goto definition
 	keymap("n", "<leader>gS", "<cmd>vsplit | lua vim.lsp.buf.definition()<CR>", opts) -- goto definition in split
 	keymap("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts) -- Code actions
