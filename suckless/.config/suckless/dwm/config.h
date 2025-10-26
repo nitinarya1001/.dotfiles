@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 0;        /* border pixel of windows */
+static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
@@ -9,14 +9,14 @@ static const char *fonts[]          = { "FiraCode-Regular:size=12", "SymbolsNerd
 static const char dmenufont[]       = "FiraCode-Regular:size=14";
 static const char dmenuprompt[]     = "Search:";
 static const char col_bgdark[]      = "#000000"; //"#111111";
-// static const char col_borderdark[]  = "#000000"; //"#555555";
+static const char col_borderdark[]  = "#0D1215"; //"#555555";
 // static const char col_fgdark[]      = "#D8CAAC"; //"#eeeeee";
 static const char col_fglight[]     = "#FFFBEF";
 static const char col_bglight[]     = "#272E33"; //"#186E0B";
 static const char *colors[][3]      = {
 	/*               fg           bg           border   */
-	[SchemeNorm] = { col_fglight,  col_bgdark, col_bglight },
-	[SchemeSel]  = { col_fglight, col_bglight, col_fglight  },
+	[SchemeNorm] = { col_fglight,  col_bgdark, col_borderdark},
+	[SchemeSel]  = { col_fglight, col_bglight, col_fglight   },
 };
 
 /* tagging */
@@ -38,7 +38,7 @@ static const Rule rules[] = {
 	{ "vlc"            ,NULL,       NULL,       0,            1,           -1 },
 	{ "Brave-browser"  ,NULL,       NULL,       1 << 1,       0,           -1 },
 	{ "Google-chrome"  ,NULL,       NULL,       1 << 1,       0,           -1 },
-	{ "Thunar"         ,NULL,       NULL,       1 << 2,       0,           -1 },
+	{ "File-manager"   ,NULL,       NULL,       0,            0,           -1 },
 	{ "libreoffice-writer",NULL,    NULL,       1 << 3,       0,           -1 },
 	{ "Lxappearance"   ,NULL,       NULL,       0,            1,           -1 },
 	{ "feh"            ,NULL,       NULL,       0,            1,           -1 },
@@ -78,7 +78,7 @@ static const char *termcmd[]  = { "st", NULL };
 /* custom commands */
 static const char *browsercmd[]     = { "brave", NULL};
 static const char *chromecmd[]      = { "google-chrome-stable", NULL};
-static const char *filemanagercmd[] = { "thunar", NULL};
+static const char *filemanagercmd[] = { "st","-c","File-manager","lf", NULL};
 static const char *clipboardcmd[]   = { "clipmenu", "-i", "-fn", dmenufont, "-nb", col_bgdark , "-nf", col_fglight, "-sb", col_bglight, "-sf", col_fglight , NULL};
 static const char *rockercmd[]      = { "st", "-c", "Volume", "alsamixer", NULL};
 static const char *lockcmd[]        = { "slock", NULL};
