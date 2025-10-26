@@ -7,6 +7,7 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
 static const char *fonts[]          = { "FiraCode-Regular:size=12", "SymbolsNerdFont-Regular:size=12" };
 static const char dmenufont[]       = "FiraCode-Regular:size=14";
+static const char dmenuprompt[]     = "Search:";
 static const char col_bgdark[]      = "#000000"; //"#111111";
 // static const char col_borderdark[]  = "#000000"; //"#555555";
 // static const char col_fgdark[]      = "#D8CAAC"; //"#eeeeee";
@@ -49,15 +50,13 @@ static const float mfact     = 0.5; /* factor of master area size [0.05..0.95] *
 static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
 static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
+static const int refreshrate = 120;  /* refresh rate (per second) for client move/resize */
 
-#include "fibonacci.c"
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-        { "[\\]",      dwindle },
-        { "><>",      NULL },    /* no layout function means floating behavior */
 	{ "[]=",      tile },    /* first entry is default */
+    { "><>",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
- 	{ "[@]",      spiral },
 };
 
 /* key definitions */
@@ -73,7 +72,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_bgdark, "-nf", col_fglight, "-sb", col_bglight, "-sf", col_fglight, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-p", dmenuprompt, "-fn", dmenufont, "-nb", col_bgdark, "-nf", col_fglight, "-sb", col_bglight, "-sf", col_fglight, NULL };
 static const char *termcmd[]  = { "st", NULL };
 
 /* custom commands */
@@ -111,8 +110,6 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_F1,     setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_F2,     setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_F3,     setlayout,      {.v = &layouts[2]} },
-	{ MODKEY,                       XK_F4,     setlayout,      {.v = &layouts[3]} },
-	{ MODKEY,                       XK_F5,     setlayout,      {.v = &layouts[4]} },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },

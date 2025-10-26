@@ -43,7 +43,7 @@ fi
 # start some nice programs
 
 exec systemctl --user import-environment DISPLAY &
-exec redhshift -P -O 5200 & 
+exec redshift -P -O 5200 & 
 exec slstatus &
 exec feh --bg-scale "$HOME/Pictures/fogforest.png" &
 exec picom &
