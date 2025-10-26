@@ -26,9 +26,9 @@ Essentials only Arch Linux setup
 
 ### [Suckless Tools](https://suckless.org/)
 - [DWM](https://dwm.suckless.org/) — Dynamic window manager.
-    - Patched with: [always-centre](https://dwm.suckless.org/patches/alwayscenter/) [fibonacci](https://dwm.suckless.org/patches/fibonacci/)
+    - Patched with: [always-centre](https://dwm.suckless.org/patches/alwayscenter/) 
 - [ST](https://st.suckless.org/) — Simple/Suckless Terminal
-    - Patched with: [scrollback](https://st.suckless.org/patches/scrollback/)
+    - Patched with: [scrollback](https://st.suckless.org/patches/scrollback/) [alpha-focus](https://st.suckless.org/patches/alpha_focus_highlight/)
 - [slstatus](https://tools.suckless.org/slstatus/) — Status monitor for DWM.
 - [slock](https://tools.suckless.org/slock/) — Simple screen locker.
 - [dmenu](https://tools.suckless.org/dmenu/) — Fuzzy finder for lanching apps.
