@@ -5,6 +5,10 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+if [ -z "$TMUX" ]; then
+  tmux attach -t session1 || $HOME/.scripts/tmux
+fi
+
 export EDITOR="vim"
 export VISUAL="vim"
 

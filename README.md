@@ -27,12 +27,14 @@ Essentials only Arch Linux setup
 ### [Suckless Tools](https://suckless.org/)
 - [DWM](https://dwm.suckless.org/) — Dynamic window manager.
     - Patched with: [always-centre](https://dwm.suckless.org/patches/alwayscenter/) 
-- [ST](https://st.suckless.org/) — Simple/Suckless Terminal
-    - Patched with: [scrollback](https://st.suckless.org/patches/scrollback/) [alpha-focus](https://st.suckless.org/patches/alpha_focus_highlight/)
+- [ST](https://st.suckless.org/) — Simple/Suckless Terminal(no patches, scrolling handled with tmux, removed transparency _it's bloat_)
 - [slstatus](https://tools.suckless.org/slstatus/) — Status monitor for DWM.
 - [slock](https://tools.suckless.org/slock/) — Simple screen locker.
 - [dmenu](https://tools.suckless.org/dmenu/) — Fuzzy finder for lanching apps.
     - This one is installed from pacman as it doesn't need any customizations.
 
-### [Neovim](https://github.com/neovim/neovim)
+### [vim](https://github.com/vim/vim)
 - Used with [vim-plug](https://github.com/junegunn/vim-plug)
+
+### [Tmux](https://github.com/tmux/tmux)
+- Used with [TPM](https://github.com/tmux-plugins/tpm)
