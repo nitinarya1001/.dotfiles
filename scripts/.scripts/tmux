@@ -1,6 +1,13 @@
 #/usr/bin/env bash
 
-tmux new-session -s session1 -n editor -d
-tmux new-window -t session1:2 -n terminal
-tmux select-window -t session1:1
-tmux attach-session -t session1
+
+renewTmux(){
+    tmux new-session -s session1 -n editor -d
+    tmux new-window -t session1:2 -n terminal
+    tmux select-window -t session1:1
+    tmux attach-session -t session1
+}
+
+if [ -z "$TMUX" ]; then
+  tmux attach -t session1 || renewTmux
+fi

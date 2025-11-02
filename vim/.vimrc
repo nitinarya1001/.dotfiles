@@ -51,6 +51,9 @@ set incsearch
 set hlsearch
 set ignorecase
 
+"statusline
+set laststatus=2
+
 "keybindings
 
 " Set leader key

@@ -5,10 +5,6 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-if [ -z "$TMUX" ]; then
-  tmux attach -t session1 || $HOME/.scripts/tmux
-fi
-
 export EDITOR="vim"
 export VISUAL="vim"
 
@@ -27,9 +23,6 @@ alias cfgdwm='cd && cd ~/.config/suckless/dwm && vim config.def.h && sudo rm con
 alias cfgst='cd && cd ~/.config/suckless/st && vim config.def.h && sudo rm config.h && sudo make clean install' #ST configuration
 alias cfgslstatus='cd && cd ~/.config/suckless/slstatus && vim config.def.h && sudo rm config.h && sudo make clean install && killall -15 slstatus && (slstatus & disown)' #SLSTATUS configuration
 alias cfgslock='cd && cd ~/.config/suckless/slock && vim config.def.h && sudo rm config.h && sudo make clean install' #slock configuration
-
-#flex command
-alias ff='fastfetch -l arch3 -s OS:host:kernel:Uptime:packages:shell:display:WM:theme:icons:font:cursor:terminal:terminalfont:CPU:GPU:memory:swap:locale:colors'
 
 #PS1='[\u@\h \W]\$ '
 PROMPT_COMMAND='PS1_CMD1=$(git branch --show-current 2>/dev/null)'; PS1='\[\e[38;5;148m\]\u\[\e[0m\] \[\e[38;5;81m\]\w\[\e[0m\] \[\e[38;5;172;1m\]${PS1_CMD1}\[\e[0m\] \[\e[38;5;222m\]\D{%d %b %y}\[\e[0m\] \[\e[38;5;222m\]\A\n\[\e[0m\]\$ '
