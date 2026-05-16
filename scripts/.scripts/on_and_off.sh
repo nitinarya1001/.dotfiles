@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 ans=""
-echo -n "ShutDown? or Reboot? (Return/R/X): "
+echo -n "ShutDown? or Reboot? or Logout? (Return/R/X/L): "
 read ans
 
 if [ -z  $ans ]; then

@@ -5,8 +5,8 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-export EDITOR="vim"
-export VISUAL="vim"
+export EDITOR="nvim"
+export VISUAL="nvim"
 
 source /usr/share/bash-completion/bash_completion
 
@@ -17,6 +17,7 @@ alias grep='grep --color=auto'
 # Basic stuff
 alias mirrors='sudo reflector --country India --latest 20 --sort rate --save /etc/pacman.d/mirrorlist'
 alias rm-bash-tmp='rm -rf ~/.bash_history-*'
+alias vim='nvim'
 
 #suckless software configuration 
 alias cfgdwm='cd && cd ~/.config/suckless/dwm && vim config.def.h && sudo rm config.h && sudo make clean install && killall -15 dwm' #DWM configuration
