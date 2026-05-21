@@ -43,6 +43,7 @@ static const Rule rules[] = {
 	{ "libreoffice-writer",NULL,    NULL,       1 << 3,       0,           -1 },
 	{ "Lxappearance"   ,NULL,       NULL,       0,            1,           -1 },
 	{ "feh"            ,NULL,       NULL,       0,            1,           -1 },
+	{ "Thunar"         ,NULL,       NULL,       1 << 2,       0,           -1 },
 	{ "Timeshift-gtk"  ,"timeshift-gtk","Timeshift-gtk",0    ,1,           -1 },
 };
 
@@ -74,12 +75,12 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-p", dmenuprompt, "-fn", dmenufont, "-nb", col_bgdark, "-nf", col_fglight, "-sb", col_bglight, "-sf", col_fglight, NULL };
-static const char *termcmd[]  = { "st","bash", "/home/nitin-arya/.scripts/tmux", NULL };
+static const char *termcmd[]  = { "st", NULL };
 
 /* custom commands */
 static const char *browsercmd[]     = { "brave", NULL};
 static const char *chromecmd[]      = { "google-chrome-stable", NULL};
-static const char *filemanagercmd[] = { "st","-c","File-manager","lf", NULL};
+static const char *filemanagercmd[] = { "thunar", NULL};
 static const char *clipboardcmd[]   = { "clipmenu", "-i", "-fn", dmenufont, "-nb", col_bgdark , "-nf", col_fglight, "-sb", col_bglight, "-sf", col_fglight , NULL};
 static const char *rockercmd[]      = { "st", "-c", "Volume", "alsamixer", NULL};
 static const char *lockcmd[]        = { "slock", NULL};
@@ -90,6 +91,7 @@ static const char *sscmd[]          = { "flameshot", "gui", NULL};
 static const char *upvol[]          = { "/usr/bin/amixer",  "set", "Master", "5%+",   NULL };
 static const char *downvol[]        = { "/usr/bin/amixer",  "set", "Master", "5%-",   NULL };
 static const char *mutevol[]        = { "/usr/bin/amixer",  "set", "Master", "toggle",NULL };
+static const char *tmuxcmd[]        = { "st","bash", "/home/nitin-arya/.scripts/tmux" , NULL };
 
 //static const char *brightup[]    = { "brightnessctl", "set", "5+%",NULL };
 //static const char *brightdown[]  = { "brightnessctl", "set", "5-%",NULL }
@@ -133,6 +135,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_End,    spawn, 	       {.v = mutevol } },
 	{ MODKEY,                       XK_Insert, spawn, 	       {.v = upvol   } },
 	{ MODKEY,                       XK_w,      spawn,          {.v = browsercmd } },
+	{ MODKEY,                       XK_t,      spawn,          {.v = tmuxcmd } },
 	{ MODKEY,                       XK_g,      spawn,          {.v = chromecmd } },
 	{ MODKEY,                       XK_e,      spawn,          {.v = filemanagercmd } },
 	{ MODKEY|ShiftMask,             XK_v,      spawn,          {.v = rockercmd } },

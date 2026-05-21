@@ -2,9 +2,9 @@
 
 
 renewTmux(){
-    tmux new-session -s session1 -n editor -d
+    tmux new-session -s session1 -n editor -d 'nvim ; $SHELL'
     tmux new-window -t session1:2 -n terminal
-    tmux select-window -t session1:1
+    tmux select-window -t session1:2
     tmux attach-session -t session1
 }
 
