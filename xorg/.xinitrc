@@ -46,9 +46,9 @@ exec systemctl --user import-environment DISPLAY &
 exec redshift -P -O 5200 & 
 exec slstatus &
 exec feh --bg-scale "$HOME/Pictures/Wallpapers/fogforest.png" &
-# exec picom &
+exec picom &
 exec clipmenud &
 exec brave &
-exec st bash $HOME/.scripts/tmux &
+exec st &
 exec $HOME/.config/suckless/scripts/startdwm
 # exec dwm 

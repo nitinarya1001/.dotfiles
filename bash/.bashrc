@@ -15,7 +15,7 @@ alias grep='grep --color=auto'
 
 # Custom aliases
 # Basic stuff
-alias mirrors='sudo reflector --country India --latest 20 --sort rate --save /etc/pacman.d/mirrorlist'
+alias mirrors='sudo reflector --latest 20 --sort rate --save /etc/pacman.d/mirrorlist'
 alias rm-bash-tmp='rm -rf ~/.bash_history-*'
 alias vim='nvim'
 
