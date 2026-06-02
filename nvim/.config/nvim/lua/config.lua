@@ -1,8 +1,0 @@
-require("appearance")
-require("options")
-require("statusline")
-require("keymaps")
-require("autocmds")
-require("plugins")
-require("lsp")
-require("misc")

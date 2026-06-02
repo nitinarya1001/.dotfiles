@@ -45,7 +45,7 @@ fi
 exec systemctl --user import-environment DISPLAY &
 exec redshift -P -O 5200 & 
 exec slstatus &
-exec feh --bg-scale "$HOME/pictures/Wallpapers/fogforest.png" &
+exec feh --bg-scale "$HOME/Pictures/Wallpapers/fogforest.png" &
 exec picom &
 exec clipmenud &
 exec brave &
